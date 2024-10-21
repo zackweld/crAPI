@@ -68,8 +68,8 @@ jobs:
           apisec-profile: "Master"
           apisec-region: "Super_2"
           # The name of the sarif format result file The file is written only if this property is provided.
-          sarif-result-file: "apisec-results.sarif"
-       - name: Import results
-         uses: github/codeql-action/upload-sarif@v3
-         with:
-          sarif_file: ./apisec-results.sarif
+          # sarif-result-file: "apisec-results.sarif"
+       # - name: Import results
+       #   uses: github/codeql-action/upload-sarif@v3
+       #   with:
+       #    sarif_file: ./apisec-results.sarif
