@@ -112,8 +112,8 @@ public class AuthController {
   public ResponseEntity<CRAPIResponse> forgetPassword(
       @Valid @RequestBody ForgetPassword forgetPassword) {
     CRAPIResponse forgetPasswordResponse = otpService.generateOtp(forgetPassword);
+    forgetPasswordResponse.status = 400;
     if (forgetPasswordResponse != null && forgetPasswordResponse.getStatus() == 200) {
-      forgetPasswordResponse.status = 400;
       return ResponseEntity.status(HttpStatus.OK).body(forgetPasswordResponse);
     }
     return ResponseEntity.status(HttpStatus.NOT_FOUND).body(forgetPasswordResponse);
