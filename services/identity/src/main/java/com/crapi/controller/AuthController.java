@@ -113,7 +113,7 @@ public class AuthController {
       @Valid @RequestBody ForgetPassword forgetPassword) {
     CRAPIResponse forgetPasswordResponse = otpService.generateOtp(forgetPassword);
     if (forgetPasswordResponse != null && forgetPasswordResponse.getStatus() == 200) {
-      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(forgetPasswordResponse);
+      return ResponseEntity.status(HttpStatus.OK).body(forgetPasswordResponse);
     }
     return ResponseEntity.status(HttpStatus.NOT_FOUND).body(forgetPasswordResponse);
   }
